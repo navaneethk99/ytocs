@@ -40,7 +40,7 @@ const videos = [
   {
     title:
       "Why the Competitive Coding Domain Is Every Tech Student’s Secret Weapon",
-    channel: "Hashmap Sexual",
+    channel: "Hashmaps & Pointers",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "cc",
   },
@@ -122,7 +122,7 @@ const Page = () => {
 
       {/* Main Content */}
       <div className="ml-20 mt-20 pr-4">
-        <h1 className="px-4 font-bold text-xl pt-4">Recommended Videos</h1>
+        <h1 className="px-4 font-bold text-xl">Recommended Videos</h1>
         <div className="w-full grid grid-cols-3 grid-rows-2 gap-4 pt-2 p-4">
           {videos.map((video, index) => (
             <div key={index} className="h-fit">
@@ -136,7 +136,15 @@ const Page = () => {
                 />
               </div>
               <div className="flex mt-2 gap-2">
-                <div className="bg-white w-[4vw] h-[4vw] aspect-square rounded-full"></div>
+                <div className="w-[3.5vw] h-[3.5vw] aspect-square rounded-full">
+                  <Image
+                    src={`https://yt3.googleusercontent.com/pkzP9B9FarjW5b8gUyOglcUyLBs6UYVuEnkoGYvpgoT3RCNLrgaSwr-Z-TeM287XRt6i8qzZGw=s160-c-k-c0x00ffffff-no-rj`}
+                    alt="video thumbnail"
+                    className="w-full h-full object-cover rounded-full"
+                    width={9999}
+                    height={9999}
+                  />
+                </div>
                 <div>
                   <p className="font-semibold line-clamp-2">{video.title}</p>
                   <p className="text-gray-400 text-sm font-semibold">
@@ -169,7 +177,7 @@ const Page = () => {
                 />
               </div>
               <div className="flex mt-2 gap-2">
-                <div className="w-[4vw] h-[4vw] aspect-square rounded-full">
+                <div className="w-[3.5vw] h-[3.5vw] aspect-square rounded-full">
                   <Image
                     src={`https://yt3.googleusercontent.com/pkzP9B9FarjW5b8gUyOglcUyLBs6UYVuEnkoGYvpgoT3RCNLrgaSwr-Z-TeM287XRt6i8qzZGw=s160-c-k-c0x00ffffff-no-rj`}
                     alt="video thumbnail"
