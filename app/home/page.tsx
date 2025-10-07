@@ -83,7 +83,7 @@ const linkedvideos = [
 ];
 const Page = () => {
   return (
-    <div className="relative w-screen h-screen overflow-x-hidden bg-[#181818]">
+    <div className="relative w-screen h-screen overflow-x-hidden bg-[#181818] desktop-only">
       {/* Top Bar */}
       <div className="fixed top-0 left-0 w-full h-20 bg-[#181818] flex items-center pl-20">
         <h1 className="font-bold text-xl">Organising Committee Selections</h1>
@@ -122,7 +122,7 @@ const Page = () => {
             <div key={index} className="h-fit">
               <div className="w-full h-full bg-white border aspect-video"></div>
               <div className="flex mt-2 gap-2">
-                <div className="bg-white w-11 h-11 aspect-square rounded-full"></div>
+                <div className="bg-white w-[4vw] h-[4vw] aspect-square rounded-full"></div>
                 <div>
                   <p className="font-semibold line-clamp-2">{video.title}</p>
                   <p className="text-gray-400 text-sm font-semibold">
@@ -155,7 +155,7 @@ const Page = () => {
                 />
               </div>
               <div className="flex mt-2 gap-2">
-                <div className="w-11 h-11 aspect-square rounded-full">
+                <div className="w-[4vw] h-[4vw] aspect-square rounded-full">
                   <Image
                     src={`https://yt3.googleusercontent.com/pkzP9B9FarjW5b8gUyOglcUyLBs6UYVuEnkoGYvpgoT3RCNLrgaSwr-Z-TeM287XRt6i8qzZGw=s160-c-k-c0x00ffffff-no-rj`}
                     alt="video thumbnail"
@@ -166,7 +166,7 @@ const Page = () => {
                 </div>
                 <div>
                   <p className="font-semibold line-clamp-2">{video.title}</p>
-                  <p className="text-gray-400 text-sm font-semibold">
+                  <p className="text-gray-400 text-sm font-semibold line-clamp-1">
                     Association for Computing Machinery
                   </p>
                   <p className="text-gray-400 text-sm font-semibold">
