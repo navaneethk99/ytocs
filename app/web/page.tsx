@@ -16,6 +16,46 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
+  const videos = [
+    {
+      title:
+        "Design Domain Explained: Where Creativity Meets Real-World Problem Solving",
+      channel: "Figma Paglus",
+      views: "1.2M views • 2 weeks ago",
+      thumbnail: "design",
+      route: "design",
+    },
+    {
+      title:
+        "The Truth About the App Domain: Build Apps That Actually Make an Impact!",
+      channel: "Redbull Enthusiasts",
+      views: "1.2M views • 2 weeks ago",
+      thumbnail: "app",
+      route: "app",
+    },
+    {
+      title: "The Management Domain: Mastering Leadership in the Tech World",
+      channel: "Introverted Extroverts",
+      views: "1.2M views • 2 weeks ago",
+      thumbnail: "mgmt",
+      route: "mgmt",
+    },
+    {
+      title:
+        "Why the Competitive Coding Domain Is Every Tech Student’s Secret Weapon",
+      channel: "Hashmaps & Pointers",
+      views: "1.2M views • 2 weeks ago",
+      thumbnail: "cc",
+      route: "cc",
+    },
+    {
+      title: "Inside the Research Domain: How Innovation Starts from Curiosity",
+      channel: "Aura Farmers",
+      views: "1.2M views • 2 weeks ago",
+      thumbnail: "research",
+      route: "research",
+    },
+  ];
   const comments = [
     {
       username: "JohnDoe",
@@ -37,6 +77,42 @@ const Page = () => {
       comment:
         "What are the key differences between hosting a static website on Vercel versus deploying a full-stack web app on AWS or Render, and how do environment variables work in each?",
       likes: 8,
+    },
+  ];
+  const linkedvideos = [
+    {
+      title:
+        "InspiHER Season 4, Bonus Episode: Tanvi Shah, Founder and Creative Director of Saltie",
+      views: "111 views • 2 months ago",
+      videoid: "NKB6waEMy98",
+    },
+    {
+      title:
+        "InspiHER Season 4, Episode 3: Shubhangi Gupta, GDG Noida Organiser and Women Techmakers Ambassador",
+      views: "263 views • 2 months ago",
+      videoid: "lHDsi5wtj44",
+    },
+    {
+      title:
+        "InspiHER Season 4, Episode 2: Muskan Agarwal, Founder at Cherry Media, ex-Amazon and GHC Scholar",
+      views: "182 views • 2 months ago",
+      videoid: "FNBmFbB6fvE",
+    },
+    {
+      title:
+        "“Computers Have Feelings Too” | Dr. Peter Robinson, University of Cambridge | DSP May 2025",
+      views: "111 views • 4 months ago",
+      videoid: "YEY1P62zAf8",
+    },
+    {
+      title: "Opening Ceremony | Cryptic Hunt 4.0 | graVITas 2025",
+      views: "543 views • 1 month ago",
+      videoid: "tHOMKNF29u4",
+    },
+    {
+      title: "Cryptic Hunt 2024 - The Aftermovie",
+      views: "148 views • 11 months ago",
+      videoid: "FF5XqPccatk",
     },
   ];
   return (
@@ -78,7 +154,15 @@ const Page = () => {
       <div className="ml-20 mt-20">
         <div className="flex">
           <div className="w-[70%]">
-            <div className="bg-white w-full aspect-video"></div>
+            <div className="bg-white w-full aspect-video">
+              <Image
+                src="/thumbnails/web.png"
+                alt="video thumbnail"
+                className="w-full h-full object-cover"
+                width={9999}
+                height={9999}
+              />
+            </div>
             <h1 className="text-white font-semibold text-xl mt-4">
               Why Choosing the Web Domain Can Launch Your Tech Career Faster
               Than You Think!
@@ -137,7 +221,56 @@ const Page = () => {
                 </div>
               </div>
             ))}
-            <div className="h-100 w-[30%]"></div>
+          </div>
+          <div className="px-5 w-[30%]">
+            {videos.map((video, index) => (
+              <div key={index} className="flex mb-5">
+                <div className="w-[180px] aspect-video flex-shrink-0">
+                  <Image
+                    src={`/thumbnails/${video.thumbnail}.png`}
+                    alt="video thumbnail"
+                    className="w-full h-full object-cover rounded-md"
+                    width={9999}
+                    height={9999}
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold line-clamp-2 text-sm ml-4">
+                    {video.title}
+                  </p>
+                  <p className="line-clamp-2 text-xs ml-4 mt-1 text-[#999999]">
+                    {video.channel}
+                  </p>
+                  <p className="line-clamp-2 text-xs ml-4 mt-1 text-[#999999]">
+                    {video.views}
+                  </p>
+                </div>
+              </div>
+            ))}
+            {linkedvideos.map((video, index) => (
+              <div key={index} className="flex mb-5">
+                <div className="w-[180px] aspect-video flex-shrink-0">
+                  <Image
+                    src={`https://img.youtube.com/vi/${video.videoid}/hqdefault.jpg`}
+                    alt="video thumbnail"
+                    className="w-full h-full object-cover rounded-md"
+                    width={9999}
+                    height={9999}
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold line-clamp-2 text-sm ml-4">
+                    {video.title}
+                  </p>
+                  <p className="line-clamp-2 text-xs ml-4 mt-1 text-[#999999]">
+                    Association for Computing Machinery (ACM-VIT)
+                  </p>
+                  <p className="line-clamp-2 text-xs ml-4 mt-1 text-[#999999]">
+                    {video.views}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
