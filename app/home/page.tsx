@@ -16,6 +16,7 @@ const videos = [
     channel: "HTML Loverz",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "web",
+    route: "web",
   },
   {
     title:
@@ -23,6 +24,7 @@ const videos = [
     channel: "Figma Paglus",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "design",
+    route: "design",
   },
   {
     title:
@@ -30,12 +32,14 @@ const videos = [
     channel: "Redbull Enthusiasts",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "app",
+    route: "app",
   },
   {
     title: "The Management Domain: Mastering Leadership in the Tech World",
     channel: "Introverted Extroverts",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "mgmt",
+    route: "mgmt",
   },
   {
     title:
@@ -43,12 +47,14 @@ const videos = [
     channel: "Hashmaps & Pointers",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "cc",
+    route: "cc",
   },
   {
     title: "Inside the Research Domain: How Innovation Starts from Curiosity",
     channel: "Aura Farmers",
     views: "1.2M views • 2 weeks ago",
     thumbnail: "research",
+    route: "research",
   },
 ];
 const linkedvideos = [
@@ -125,7 +131,7 @@ const Page = () => {
         <h1 className="px-4 font-bold text-xl">Recommended Videos</h1>
         <div className="w-full grid grid-cols-3 grid-rows-2 gap-4 pt-2 p-4">
           {videos.map((video, index) => (
-            <div key={index} className="h-fit">
+            <Link href={`/${video.route}`} key={index} className="h-fit">
               <div className="w-full h-full aspect-video">
                 <Image
                   src={`/thumbnails/${video.thumbnail}.png`}
@@ -138,7 +144,7 @@ const Page = () => {
               <div className="flex mt-2 gap-2">
                 <div className="w-[3.5vw] h-[3.5vw] aspect-square rounded-full">
                   <Image
-                    src={`https://yt3.googleusercontent.com/pkzP9B9FarjW5b8gUyOglcUyLBs6UYVuEnkoGYvpgoT3RCNLrgaSwr-Z-TeM287XRt6i8qzZGw=s160-c-k-c0x00ffffff-no-rj`}
+                    src={`https://randomuser.me/api/portraits/men/${index}.jpg`}
                     alt="video thumbnail"
                     className="w-full h-full object-cover rounded-full"
                     width={9999}
@@ -155,7 +161,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
