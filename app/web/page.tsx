@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
-  faHome,
   faShare,
   faThumbsDown,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import {
+  faHome,
   faUser,
   faHeadphones,
   faHandshake,
@@ -224,7 +224,7 @@ const Page = () => {
           </div>
           <div className="px-5 w-[30%]">
             {videos.map((video, index) => (
-              <div key={index} className="flex mb-5">
+              <Link href={`/${video.route}`} key={index} className="flex mb-5">
                 <div className="w-[180px] aspect-video flex-shrink-0">
                   <Image
                     src={`/thumbnails/${video.thumbnail}.png`}
@@ -245,7 +245,7 @@ const Page = () => {
                     {video.views}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
             {linkedvideos.map((video, index) => (
               <div key={index} className="flex mb-5">
